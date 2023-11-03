@@ -18,8 +18,6 @@ class CreateBiomasTable extends Migration
             $table->string("nombre");
             $table->unsignedBigInteger("id_animal");
             $table->unsignedBigInteger("id_bioma");
-            $table->foreign('id_animal')->references('id')->on('animales');
-            $table->foreign('id_bioma')->references('id')->on('bioma');
             $table->unique(["id_animal","id_bioma"]);
             $table->softDeletes();
             $table->timestamps();
